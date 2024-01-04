@@ -47,5 +47,12 @@ content="
 
 	<p>Note! Tests will work differently on file:/ and 
 		on <a href="http://localhost/_test/CSP-policy/test.html">localhost</a></p>
+
+	<h2>PDF frame</h2>
+	<p>Guard: `frame-src 'self'` (or child-src or default-src)</p>
+	<iframe class="pdf-component" 
+		style="height: 538px; width: 962px; border: 0px; margin: 0px;" 
+		src="./assets/report.pdf"
+	></iframe>
 </body>
 </html>
