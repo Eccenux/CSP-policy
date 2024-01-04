@@ -29,6 +29,12 @@ content="
 		font-family: system-ui, sans-serif;
 	}
 </style>
+
+<!-- ExtJS (allowed by: style-src https://*.lib.mol.pl) -->
+<link rel="stylesheet" type="text/css" href="https://extjs.lib.mol.pl/ext-6.5.3/build/classic/theme-classic/resources/theme-classic-all.css">
+<!-- ExtJS (allowed by: script-src-elem https://*.lib.mol.pl) -->
+<script type="text/javascript" src="https://extjs.lib.mol.pl/ext-6.5.3/build/ext-all.js"></script>
+<script type="text/javascript" src="https://extjs.lib.mol.pl/ext-6.5.3/build/classic/theme-classic/theme-classic.js"></script>
 <body>
 	<h2>Scripts</h2>
 	<div style="display: grid; grid-template-columns: repeat(2, max-content); gap: 1em 2em">
@@ -58,6 +64,10 @@ content="
 	</div>
 	<p>Note! Tests will work differently on file:/ and 
 		on <a href="http://localhost/_test/CSP-policy/test.html">localhost</a>.</p>
+
+	<h2>ExtJS Grid</h2>
+	<div id="ext-grid"></div>
+	<script src="assets/ext-grid.js"></script>
 
 	<h2>PDF frame</h2>
 	<p>Guard: `frame-src 'self'` (or child-src or default-src)</p>
