@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>🔥 Test CSP</title>
+
+<meta http-equiv="Content-Security-Policy"
+content="
+	frame-ancestors 'self'
+	; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' 
+		https://*.lib.mol.pl https://*.molnet.mol.pl 
+		https://www.googletagmanager.com/ 
+	; script-src-attr 'none'
+	; style-src 'self' 'unsafe-inline' 
+		https://*.lib.mol.pl https://*.molnet.mol.pl
+		https://fonts.googleapis.com https://fonts.gstatic.com 
+	; connect-src *
+	; font-src 'self' 
+		https://fonts.googleapis.com https://fonts.gstatic.com
+	; img-src * data:
+	; frame-src 'self'
+	; worker-src 'self'
+	; object-src 'none'
+">
+</head>
+<style>
+	body {
+		font-family: system-ui, sans-serif;
+	}
+</style>
+<body>
+	<button onclick="alert('works?')">onclick test</button>
+
+	<button id="script-tag">script tag</button>
+	<script>
+		document.querySelector('#script-tag').addEventListener('click', () => {
+			alert('works?');
+		})
+	</script>
+
+	<button id="script-src">script src="local"</button>
+	<script src="assets/local.js"></script>
+
+	<button id="script-module">script module</button>
+	<script type="module" src="assets/module-main.js"></script>
+
+	<p>Note! Tests will work differently on file:/ and 
+		on <a href="http://localhost/_test/CSP-policy/test.html">localhost</a></p>
+</body>
+</html>
