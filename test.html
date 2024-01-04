@@ -30,21 +30,32 @@ content="
 	}
 </style>
 <body>
-	<button onclick="alert('works?')">onclick test</button>
-
-	<button id="script-tag">script tag</button>
-	<script>
-		document.querySelector('#script-tag').addEventListener('click', () => {
-			alert('works?');
-		})
-	</script>
-
-	<button id="script-src">script src="local"</button>
-	<script src="assets/local.js"></script>
-
-	<button id="script-module">script module</button>
-	<script type="module" src="assets/module-main.js"></script>
-
+	<h2>Scripts</h2>
+	<div style="display: grid; grid-template-columns: repeat(2, max-content); gap: 1em 2em">
+	<d>
+		<p>Blocked by script-src-attr 'none'</p>
+		<button onclick="alert('works?')">onclick test</button>
+	</d>
+	<d>
+		<p>Allowed by script-src-elem 'unsafe-inline'</p>
+		<button id="script-tag">script tag</button>
+		<script>
+			document.querySelector('#script-tag').addEventListener('click', () => {
+				alert('Hello from script tag');
+			})
+		</script>
+	</d>
+	<d>
+		<p>Allowed by script-src-elem 'self'</p>
+		<button id="script-src">script src="local"</button>
+		<script src="assets/local.js"></script>
+	</d>
+	<d>
+		<p>Allowed by script-src-elem 'self'</p>
+		<button id="script-module">script module</button>
+		<script type="module" src="assets/module-main.js"></script>
+	</d>
+	</div>
 	<p>Note! Tests will work differently on file:/ and 
 		on <a href="http://localhost/_test/CSP-policy/test.html">localhost</a></p>
 
