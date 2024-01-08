@@ -26,7 +26,17 @@ content="
 </head>
 <style>
 	body {
-		font-family: system-ui, sans-serif;
+		/* font-family: system-ui, sans-serif; */
+		/* Ext-like */
+		font-size: 12px;
+		font-family: tahoma, arial, verdana, sans-serif;
+	}
+	html,body {
+		padding: 0;
+		margin: 0;
+	}
+	main {
+		margin: 1em;
 	}
 </style>
 
@@ -36,6 +46,7 @@ content="
 <script type="text/javascript" src="https://extjs.lib.mol.pl/ext-6.5.3/build/ext-all.js"></script>
 <script type="text/javascript" src="https://extjs.lib.mol.pl/ext-6.5.3/build/classic/theme-classic/theme-classic.js"></script>
 <body>
+<main>
 	<h2>Scripts</h2>
 	<div style="display: grid; grid-template-columns: repeat(2, max-content); gap: 1em 2em">
 	<d>
@@ -75,5 +86,6 @@ content="
 		style="height: 400px; width: 900px; border: 1px solid darkgreen; margin: 0px;" 
 		src="./assets/report.pdf"
 	></iframe>
+</main>
 </body>
 </html>
