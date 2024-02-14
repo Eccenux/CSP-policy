@@ -40,4 +40,3 @@ Ext.create('Ext.grid.Panel', {
 	width: 400,
 	renderTo: document.querySelector('#ext-grid'),
 });
-a:m
